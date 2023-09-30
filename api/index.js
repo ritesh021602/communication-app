@@ -60,19 +60,11 @@ app.post('/call', async(req, res) => {
     return res.status(400).json({ success: false, msg: 'Invalid Indian phone number' });
   }
   try {
-    console.log('hitting');
-    res.type('xml');
-     res.send(`
-      <Response>
-     
-      <Say>esting from frontend work this time</Say>
-   
-      </Response>
-    `);
+    
 
     client.calls
       .create({
-        url: 'https://b89a-2401-4900-1f3d-fd5f-acc1-7939-ef9b-c102.ngrok-free.app/call',
+        url: 'https://handler.twilio.com/twiml/EH0e8ca2231f7fc593dafe12e1fe310a02',
         to: '+91' + req.body.to,
         from: '+18575984355'
       })
